@@ -3,11 +3,15 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
 interface Props {
-  title: string;
+  title: ReactNode;
   btnBoldText: string;
   children: ReactNode;
 }
 
+/**
+ * 스크롤 애니메이션이 들어가는 content의 layout
+ * @param children title과 button 제외 body 영역
+ */
 function ContentLayout({ title, btnBoldText, children }: Props) {
   const targetRef = useRef(null);
   const sectionRef = useRef(null);
@@ -37,31 +41,24 @@ function ContentLayout({ title, btnBoldText, children }: Props) {
     };
   }, []);
 
-  console.log(isVisible);
-
   return (
-    <div className='relative flex w-svw pt-[30vh]'>
-      <div className='w-full'>
-        <div ref={targetRef}></div>
-        <section
-          ref={sectionRef}
+    <div className='ml-[20%] max-w-[712px]'>
+      <div ref={targetRef}></div>
+      <section
+        ref={sectionRef}
+        className={['flex w-full flex-col gap-10', isVisible ? '' : 'animate-content-out opacity-0'].join(' ')}
+      >
+        <h3 className={['text-H1_EN', isVisible ? 'animate-content-in' : ''].join(' ')}>{title}</h3>
+        <div className={['px-11', isVisible ? 'animate-content-in-slow' : ''].join(' ')}>{children}</div>
+        <button
           className={[
-            'scroll-text absolute flex w-full flex-col gap-10 pl-[20%]',
-            isVisible ? '' : 'animate-content-out opacity-0',
+            'mx-5 w-fit rounded-[35px] bg-gdsc-Black px-[26px] py-[18px] text-gdsc-White',
+            isVisible ? 'animate-content-in' : '',
           ].join(' ')}
         >
-          <h3 className={['text-H1_EN', isVisible ? 'animate-content-in' : ''].join(' ')}>{title}</h3>
-          <div className={isVisible ? 'animate-content-in-slow' : ''}>{children}</div>
-          <button
-            className={[
-              'w-fit rounded-[35px] bg-gdsc-Black px-[26px] py-[18px] text-gdsc-White',
-              isVisible ? 'animate-content-in' : '',
-            ].join(' ')}
-          >
-            Learn more about <span className='font-bold'>{btnBoldText}</span>
-          </button>
-        </section>
-      </div>
+          Learn more about <span className='font-bold'>{btnBoldText}</span>
+        </button>
+      </section>
     </div>
   );
 }

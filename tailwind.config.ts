@@ -50,7 +50,7 @@ const config: Config = {
           200: '#C1CFD4',
         },
         White: {
-          DEFAULT: '#F1F3F4',
+          DEFAULT: '#FFF',
         },
       },
     },
