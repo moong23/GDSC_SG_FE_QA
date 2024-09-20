@@ -151,6 +151,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/font@npm:^14.2.13":
+  version: 14.2.13
+  resolution: "@next/font@npm:14.2.13"
+  peerDependencies:
+    next: "*"
+  checksum: 10c0/d2b89f490efe09f3ccd1bc7102f9bab6d970ffaf482dccc42b23a1da7608a598568560894f82a57a415f497a50e5349da061b0905ceb2500034afa997cb85903
+  languageName: node
+  linkType: hard
+
 "@next/swc-darwin-arm64@npm:14.2.7":
   version: 14.2.7
   resolution: "@next/swc-darwin-arm64@npm:14.2.7"
@@ -1731,6 +1740,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gdsc_sogang_fe@workspace:."
   dependencies:
+    "@next/font": "npm:^14.2.13"
     "@types/node": "npm:^22.5.5"
     "@types/react": "npm:^18.3.7"
     "@types/react-dom": "npm:^18"

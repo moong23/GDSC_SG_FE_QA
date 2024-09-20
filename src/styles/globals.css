@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Noto Sans KR';
-  src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-}
-
-@font-face {
   font-family: 'Google Sans Display';
   src: url('/font/Google-Sans/GoogleSans-Regular.ttf');
+}
+
+html {
+  font-family: 'Noto Sans KR', 'Google Sans Display', sans-serif;
 }

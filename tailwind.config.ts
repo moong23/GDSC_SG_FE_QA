@@ -8,7 +8,6 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      ko: ['Noto Sans KR', 'sans-serif'],
       en: ['Google Sans Display', 'sans-serif'],
     },
     colors: {
@@ -127,7 +126,7 @@ const config: Config = {
         },
 
         '.text-H_KR': {
-          '@apply font-ko font-semibold': {},
+          '@apply font-semibold': {},
           lineHeight: '160%',
         },
         '.text-H1_KR': {
@@ -147,7 +146,7 @@ const config: Config = {
         },
 
         '.text-P_KR': {
-          '@apply font-ko font-normal': {},
+          '@apply font-normal': {},
           lineHeight: '180%',
         },
         '.text-P1_KR': {
