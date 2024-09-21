@@ -3,6 +3,7 @@ import seminarIcon from '@/assets/icon/landing_seminar.svg';
 import hackatonIcon from '@/assets/icon/landing_hackaton.svg';
 import gfdIcon from '@/assets/icon/landing_gfd.svg';
 import gfdStarIcon from '@/assets/icon/landing_gfd_star.svg';
+import StudyIcon from './StudyIcon';
 interface LogoTitleProps {
   icon: any;
   iconSizeStyle: string;
@@ -44,6 +45,52 @@ const GFDTitle = () => {
       </div>
       <div className='whitespace-nowrap pl-[34px]'>For Developers</div>
     </>
+  );
+}
+
+const StudyBody = () => {
+  const STUDY_LIST: {
+    color: 'red' | 'blue' | 'green';
+    title: string;
+    stack: string[];
+    detail: string;
+  }[] = [
+    {
+      color: 'red',
+      title: 'Design',
+      stack: ['ui/ux'],
+      detail: '디자인과 관련된 다양한 분야를 자유롭게 배울 수 있습니다.'
+    },
+    {
+      color: 'blue',
+      title: 'Tech',
+      stack: ['web', 'app', 'ai/ml', 'cloud/infra'],
+      detail: '개발과 관련된 다양한 분야를 자유롭게 배울 수 있습니다.'
+    },
+    {
+      color: 'green',
+      title: 'Biz',
+      stack: ['planning', 'pm'],
+      detail: '운영, 기획, 홍보와 관련된 다양한 분야를 자유롭게 배울 수 있습니다.'
+    }
+  ]
+
+  return (
+    <div className='flex flex-col gap-6'>
+      {STUDY_LIST.map(({color, title, detail, stack}) => 
+        <div key={title} className='flex items-center'>
+          <StudyIcon color={color}/>
+          <h6 className='ml-2 text-H3_EN text-gdsc-Grey-800 w-[130px]'>{title}</h6>
+          <div className='text-gdsc-Grey-600 text-P3_KR'>
+            <div className='flex gap-[10px]'>
+              {stack.map((item) => <span key={item}>{item}</span>)}등<br/>
+            </div>
+          {detail}
+          </div>
+        </div>
+      )}
+    </div>
+    
   );
 }
 
@@ -94,7 +141,7 @@ export const SCROLL_CONTENT_LIST = [
   {
     type: 'Study',
     title: 'Saint Study',
-    body: <div>추후 변경 예정</div>,
+    body: <StudyBody />,
     btnText: 'Saint Study',
   },
   {
