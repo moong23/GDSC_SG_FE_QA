@@ -50,11 +50,11 @@ const GFDTitle = () => {
 const SeminarBody = () => {
   const SEMINAR_TYPE = [
     {
-      title: '파트별 세미나',
+      title: '파트별 세미나 (TBD)',
       detail: '월마다 각자의 인사이트를 공유하는 자리입니다.',
     },
     {
-      title: '멘토 세미나',
+      title: '커리어 세미나',
       detail: '파트별 현직자를 모셔서 커리어에 대해 공유하는 자리입니다.',
     },
   ];
@@ -74,7 +74,7 @@ const HackatonBody = () => {
   return (
     <p className='font-ko text-24 text-gdsc-Grey-600'>
       난이도별 해커톤 및<br />
-      GDSC Solution Challenge를 진행합니다.
+      타 GDG Campus와의 연합 해커톤을 진행합니다.
     </p>
   );
 }
@@ -93,9 +93,9 @@ const GFDBody = () => {
 export const SCROLL_CONTENT_LIST = [
   {
     type: 'Study',
-    title: 'Study',
+    title: 'Saint Study',
     body: <div>추후 변경 예정</div>,
-    btnText: 'GDG Study',
+    btnText: 'Saint Study',
   },
   {
     type: 'Seminar',
@@ -108,7 +108,7 @@ export const SCROLL_CONTENT_LIST = [
       />
     ),
     body: <SeminarBody />,
-    btnText: 'GDG Seminar',
+    btnText: 'Career Seminar',
   },
   {
     type: 'Hackaton',
@@ -121,7 +121,7 @@ export const SCROLL_CONTENT_LIST = [
       />
     ),
     body: <HackatonBody />,
-    btnText: 'GDG Hackaton',
+    btnText: 'Hackaton',
   },
   {
     type: 'GFD',
