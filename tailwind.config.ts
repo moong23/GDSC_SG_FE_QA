@@ -8,7 +8,6 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      ko: ['Noto Sans KR', 'sans-serif'],
       en: ['Google Sans Display', 'sans-serif'],
     },
     colors: {
@@ -51,7 +50,7 @@ const config: Config = {
           200: '#C1CFD4',
         },
         White: {
-          DEFAULT: '#F1F3F4',
+          DEFAULT: '#FFF',
         },
       },
     },
@@ -65,7 +64,23 @@ const config: Config = {
       14: '0.875rem',
       12: '0.75rem',
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        'slide-right': {
+          '0%': { transform: 'translateX(-50%) translateY(0)' },
+          '100%': { transform: 'translateX(0) translateY(0)' },
+        },
+        'slide-up': {
+          '0%': { transform: 'translateX(0) translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateX(0) translateY(-267px)', opacity: '0' },
+        },
+      },
+      animation: {
+        'content-in': 'slide-right 1s ease-in-out',
+        'content-in-slow': 'slide-right 1.5s ease-in-out',
+        'content-out': 'slide-up 0.4s ease-in forwards',
+      },
+    },
   },
   plugins: [
     ({ addUtilities }: any) => {
@@ -111,7 +126,7 @@ const config: Config = {
         },
 
         '.text-H_KR': {
-          '@apply font-ko font-semibold': {},
+          '@apply font-semibold': {},
           lineHeight: '160%',
         },
         '.text-H1_KR': {
@@ -131,7 +146,7 @@ const config: Config = {
         },
 
         '.text-P_KR': {
-          '@apply font-ko font-normal': {},
+          '@apply font-normal': {},
           lineHeight: '180%',
         },
         '.text-P1_KR': {

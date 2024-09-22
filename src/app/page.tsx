@@ -1,20 +1,29 @@
+import LandingPageFooter from '@/components/Footer/LandingPageFooter';
+import ContentLayout from '@/components/LandingPage/ContentLayout';
+import PageWrapper from '@/components/LandingPage/PageWrapper';
+import { SCROLL_CONTENT_LIST } from '@/components/LandingPage/ScrollContent';
 import tw from 'tailwind-styled-components';
 
 export default function Home() {
   const MainWrapper = tw.main`
     flex
-    min-h-screen
     flex-col
-    items-center
-    justify-center
-    gap-8
-    p-24
+    h-screen
+    overflow-y-auto
+    snap-y
+    snap-proximity
   `;
   return (
     <MainWrapper>
-      <h1 className='text-gdsc-Blue-100 text-H1_EN'>GDSC Sogang H1_EN 영문 폰트</h1>
-      <h2 className='text-gdsc-Blue-100 text-H2_KR'>GDSC Sogang H2_KR 한글 폰트</h2>
-      <p className='text-gdsc-Red-100'>2024.09.02 ~</p>
+      <PageWrapper className='bg-gdsc-Green-600'>메인페이지</PageWrapper>
+      {SCROLL_CONTENT_LIST.map(({ type, title, body, btnText }) => (
+        <PageWrapper key={type} className='items-ceneter relative justify-start'>
+          <ContentLayout title={title} btnBoldText={btnText}>
+            {body}
+          </ContentLayout>
+        </PageWrapper>
+      ))}
+      <LandingPageFooter />
     </MainWrapper>
   );
 }
