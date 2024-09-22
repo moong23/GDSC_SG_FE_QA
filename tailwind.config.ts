@@ -53,6 +53,7 @@ const config: Config = {
           DEFAULT: '#FFF',
         },
       },
+      transparent: 'transparent',
     },
     fontSize: {
       72: '4.5rem',
@@ -65,6 +66,9 @@ const config: Config = {
       12: '0.75rem',
     },
     extend: {
+      spacing: {
+        content: '90rem',
+      },
       keyframes: {
         'slide-right': {
           '0%': { transform: 'translateX(-50%) translateY(0)' },
@@ -74,11 +78,46 @@ const config: Config = {
           '0%': { transform: 'translateX(0) translateY(0)', opacity: '1' },
           '100%': { transform: 'translateX(0) translateY(-267px)', opacity: '0' },
         },
+        'spin-sequence': {
+          '0%': { transform: 'rotate(0deg)' },
+          '16%': { transform: 'rotate(120deg)' },
+          '24%': { transform: 'rotate(120deg)' },
+          '40%': { transform: 'rotate(240deg)' },
+          '48%': { transform: 'rotate(240deg)' },
+          '64%': { transform: 'rotate(120deg)' },
+          '72%': { transform: 'rotate(120deg)' },
+          '88%': { transform: 'rotate(0deg)' },
+          '96%': { transform: 'rotate(0deg)' },
+        },
+        resize: {
+          '0%': { transform: 'translateY(0%)' },
+          '25%': { transform: 'translateY(20%)' },
+          '50%': { transform: 'translateY(20%)' },
+          '75%': { transform: 'translateY(0%)' },
+        },
+        'svg-swap': {
+          '0%': { opacity: '1' }, // 첫 번째 SVG 보임
+          '45%': { opacity: '1' }, // 첫 번째 SVG 유지
+          '55%': { opacity: '0' }, // 첫 번째 SVG 사라짐
+          '90%': { opacity: '0' }, // 첫 번째 SVG 안보임
+          '100%': { opacity: '1' }, // 첫 번째 SVG 보임 유지
+        },
+        'svg-swap-reverse': {
+          '0%': { opacity: '0' }, // 두 번째 SVG 안보임
+          '45%': { opacity: '0' }, // 두 번째 SVG 안보임 유지
+          '55%': { opacity: '1' }, // 두 번째 SVG 보임
+          '90%': { opacity: '1' }, // 두 번째 SVG 보임 유지
+          '100%': { opacity: '0' }, // 두 번째 SVG 사라짐
+        },
       },
       animation: {
         'content-in': 'slide-right 1s ease-in-out',
         'content-in-slow': 'slide-right 1.5s ease-in-out',
         'content-out': 'slide-up 0.4s ease-in forwards',
+        'gdsc-spin': 'spin-sequence 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite',
+        'gdsc-resize': 'resize 2s ease-in-out infinite',
+        'svg-swap': 'svg-swap 4s ease-in-out infinite', // 첫 번째 SVG 교체 애니메이션
+        'svg-swap-reverse': 'svg-swap-reverse 4s ease-in-out infinite', // 두 번째 SVG 교체 애니메이션
       },
     },
   },
