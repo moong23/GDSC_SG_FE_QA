@@ -4,6 +4,7 @@ import hackatonIcon from '@/assets/icon/landing_hackaton.svg';
 import gfdIcon from '@/assets/icon/landing_gfd.svg';
 import gfdStarIcon from '@/assets/icon/landing_gfd_star.svg';
 import StudyIcon from './StudyIcon';
+import Link from 'next/link';
 interface LogoTitleProps {
   icon: any;
   iconSizeStyle: string;
@@ -17,7 +18,7 @@ const LogoTitle = ({ icon, iconSizeStyle, title, titleCustomStyle }: LogoTitlePr
   return (
     <div className='relative'>
       <div className={iconStyle}>
-        <Image alt={`${title} icon`} className='h-full w-full' src={icon} />
+        <Image alt={`${title} icon`} className='w-full h-full' src={icon} />
       </div>
       <div className={titleStyle}>
         <span className='text-gdsc-White'>{title.slice(0, 1)}</span>
@@ -25,28 +26,28 @@ const LogoTitle = ({ icon, iconSizeStyle, title, titleCustomStyle }: LogoTitlePr
       </div>
     </div>
   );
-}
+};
 
 const GFDTitle = () => {
   return (
     <>
       <div className='relative'>
         <div className='relative h-[95px] w-[95px]'>
-          <Image alt={`Google For Developers icon1`} className='h-full w-full' src={gfdIcon} />
+          <Image alt={`Google For Developers icon1`} className='w-full h-full' src={gfdIcon} />
         </div>
         <div className='absolute -bottom-6 left-[34px] z-10'>
           <span className='text-gdsc-White'>G</span>
           oogle
           <br />
           <div className='absolute -right-12 bottom-5 h-[41px] w-[41px] rotate-6'>
-            <Image alt={`Google For Developers icon2`} className='h-full w-full' src={gfdStarIcon} />
+            <Image alt={`Google For Developers icon2`} className='w-full h-full' src={gfdStarIcon} />
           </div>
         </div>
       </div>
       <div className='whitespace-nowrap pl-[34px]'>For Developers</div>
     </>
   );
-}
+};
 
 const StudyBody = () => {
   const STUDY_LIST: {
@@ -59,40 +60,42 @@ const StudyBody = () => {
       color: 'red',
       title: 'Design',
       stack: ['ui/ux'],
-      detail: '디자인과 관련된 다양한 분야를 자유롭게 배울 수 있습니다.'
+      detail: '디자인과 관련된 다양한 분야를 자유롭게 배울 수 있습니다.',
     },
     {
       color: 'blue',
       title: 'Tech',
       stack: ['web', 'app', 'ai/ml', 'cloud/infra'],
-      detail: '개발과 관련된 다양한 분야를 자유롭게 배울 수 있습니다.'
+      detail: '개발과 관련된 다양한 분야를 자유롭게 배울 수 있습니다.',
     },
     {
       color: 'green',
       title: 'Biz',
       stack: ['planning', 'pm'],
-      detail: '운영, 기획, 홍보와 관련된 다양한 분야를 자유롭게 배울 수 있습니다.'
-    }
-  ]
+      detail: '운영, 기획, 홍보와 관련된 다양한 분야를 자유롭게 배울 수 있습니다.',
+    },
+  ];
 
   return (
     <div className='flex flex-col gap-6'>
-      {STUDY_LIST.map(({color, title, detail, stack}) => 
+      {STUDY_LIST.map(({ color, title, detail, stack }) => (
         <div key={title} className='flex items-center'>
-          <StudyIcon color={color}/>
+          <StudyIcon color={color} />
           <h6 className='ml-2 text-H3_EN text-gdsc-Grey-800 w-[130px]'>{title}</h6>
           <div className='text-gdsc-Grey-600 text-P3_KR'>
             <div className='flex gap-[10px]'>
-              {stack.map((item) => <span key={item}>{item}</span>)}등<br/>
+              {stack.map(item => (
+                <span key={item}>{item}</span>
+              ))}
+              등<br />
             </div>
-          {detail}
+            {detail}
           </div>
         </div>
-      )}
+      ))}
     </div>
-    
   );
-}
+};
 
 const SeminarBody = () => {
   const SEMINAR_TYPE = [
@@ -115,16 +118,15 @@ const SeminarBody = () => {
       ))}
     </div>
   );
-}
+};
 
 const HackatonBody = () => {
   return (
     <p className='font-ko text-24 text-gdsc-Grey-600'>
-      난이도별 해커톤 및<br />
-      타 GDG Campus와의 연합 해커톤을 진행합니다.
+      난이도별 해커톤 및<br />타 GDG Campus와의 연합 해커톤을 진행합니다.
     </p>
   );
-}
+};
 
 const GFDBody = () => {
   return (
@@ -135,14 +137,49 @@ const GFDBody = () => {
       GDG, GDE, 국/내외 GDSC 콜라보를 진행합니다.
     </p>
   );
-}
+};
 
 export const SCROLL_CONTENT_LIST = [
+  {
+    type: 'Mainpage',
+    title: <span className='text-[120px] font-bold'>GDG</span>,
+    subtitle: (
+      <span className='text-H2_EN'>
+        on Campus <span className='text-gdsc-Red-500'>Sogang</span>
+      </span>
+    ),
+    body: (
+      <span className='text-P3_KR text-[#767676] whitespace-pre-wrap'>
+        GDG on Campus Sogang은 2024년 10월 정식으로 출범할 서강대학교의 GDSC 챕터입니다. {'\n'}서강대학교 재학생 중 IT에
+        관심이 있는 학생들의 오아시스가 되기 위한 커뮤니티를 만들어나가고 있습니다.
+      </span>
+    ),
+    isDoubleBtn: true,
+    btn1: (
+      <Link
+        className='bg-gdsc-Black text-center rounded-full px-[26px] py-[18px] text-gdsc-White text-[20px]'
+        href='https://forms.gle/FBV1BLGTHjgKdH1y9'
+        target='_blank'
+      >
+        Join Now
+      </Link>
+    ),
+    btn2: (
+      <Link
+        className='bg-gdsc-Black text-center rounded-full px-[26px] py-[18px] text-gdsc-White text-[20px]'
+        href='https://gdgoncampus-sg.oopy.io/'
+        target='_blank'
+      >
+        Learn More
+      </Link>
+    ),
+  },
   {
     type: 'Study',
     title: 'Saint Study',
     body: <StudyBody />,
     btnText: 'Saint Study',
+    btnClickLink: '/',
   },
   {
     type: 'Seminar',
@@ -156,6 +193,7 @@ export const SCROLL_CONTENT_LIST = [
     ),
     body: <SeminarBody />,
     btnText: 'Career Seminar',
+    btnClickLink: '/',
   },
   {
     type: 'Hackaton',
@@ -169,11 +207,13 @@ export const SCROLL_CONTENT_LIST = [
     ),
     body: <HackatonBody />,
     btnText: 'Hackaton',
+    btnClickLink: '/',
   },
   {
     type: 'GFD',
     title: <GFDTitle />,
     body: <GFDBody />,
     btnText: 'Google For Developers',
+    btnClickLink: '/',
   },
 ];
