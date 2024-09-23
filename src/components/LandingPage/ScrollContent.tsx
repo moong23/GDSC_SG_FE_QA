@@ -101,7 +101,8 @@ const SEMINAR_TYPE = [
 ];
 
 const STUDY_BODY = [
-  {title: '공부하고 싶은데 함께할 팀원이 없나요?',
+  {
+    title: '공부하고 싶은데 함께할 팀원이 없나요?',
     detail: `커뮤니티원과 함께 자유 주제로 학습할 수 있는 자율 스터디에 참가해보세요!\n(UI/UX, Marketing, Web, AI,ML, etc!)`
   }
 ]
