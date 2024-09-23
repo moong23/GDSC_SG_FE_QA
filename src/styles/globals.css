@@ -10,3 +10,12 @@
 html {
   font-family: 'Noto Sans KR', 'Google Sans Display', sans-serif;
 }
+
+* {
+  user-select: none;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
