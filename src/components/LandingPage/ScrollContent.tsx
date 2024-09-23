@@ -3,7 +3,7 @@ import seminarIcon from '@/assets/icon/landing_seminar.svg';
 import hackatonIcon from '@/assets/icon/landing_hackaton.svg';
 import gfdIcon from '@/assets/icon/landing_gfd.svg';
 import gfdStarIcon from '@/assets/icon/landing_gfd_star.svg';
-import StudyIcon from './StudyIcon';
+import studyIcon from '@/assets/icon/landing_study.svg';
 import Link from 'next/link';
 interface LogoTitleProps {
   icon: any;
@@ -49,71 +49,20 @@ const GFDTitle = () => {
   );
 };
 
-const StudyBody = () => {
-  const STUDY_LIST: {
-    color: 'red' | 'blue' | 'green';
+interface TitleDetailBodyProps {
+  data: {
     title: string;
-    stack: string[];
     detail: string;
-  }[] = [
-    {
-      color: 'red',
-      title: 'Design',
-      stack: ['ui/ux'],
-      detail: '디자인과 관련된 다양한 분야를 자유롭게 배울 수 있습니다.',
-    },
-    {
-      color: 'blue',
-      title: 'Tech',
-      stack: ['web', 'app', 'ai/ml', 'cloud/infra'],
-      detail: '개발과 관련된 다양한 분야를 자유롭게 배울 수 있습니다.',
-    },
-    {
-      color: 'green',
-      title: 'Biz',
-      stack: ['planning', 'pm'],
-      detail: '운영, 기획, 홍보와 관련된 다양한 분야를 자유롭게 배울 수 있습니다.',
-    },
-  ];
+  }[]
+}
 
-  return (
-    <div className='flex flex-col gap-6'>
-      {STUDY_LIST.map(({ color, title, detail, stack }) => (
-        <div key={title} className='flex items-center'>
-          <StudyIcon color={color} />
-          <h6 className='ml-2 text-H3_EN text-gdsc-Grey-800 w-[130px]'>{title}</h6>
-          <div className='text-gdsc-Grey-600 text-P3_KR'>
-            <div className='flex gap-[10px]'>
-              {stack.map(item => (
-                <span key={item}>{item}</span>
-              ))}
-              등<br />
-            </div>
-            {detail}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-const SeminarBody = () => {
-  const SEMINAR_TYPE = [
-    {
-      title: '파트별 세미나 (TBD)',
-      detail: '월마다 각자의 인사이트를 공유하는 자리입니다.',
-    },
-    {
-      title: '커리어 세미나',
-      detail: '파트별 현직자를 모셔서 커리어에 대해 공유하는 자리입니다.',
-    },
-  ];
+const TitleDetailBody = ({data}: TitleDetailBodyProps) => {
   return (
     <div className='flex flex-col gap-8'>
-      {SEMINAR_TYPE.map(({ title, detail }) => (
+      {data.map(({ title, detail }) => (
         <div key={title} className='flex flex-col gap-1'>
           <h6 className='text-gdsc-Grey-800 text-H3_KR'>{title}</h6>
-          <p className='text-gdsc-Grey-600 text-P3_KR'>{detail}</p>
+          <p className='text-gdsc-Grey-600 text-P3_KR whitespace-pre-wrap'>{detail}</p>
         </div>
       ))}
     </div>
@@ -138,6 +87,24 @@ const GFDBody = () => {
     </p>
   );
 };
+
+// 세미나 내용
+const SEMINAR_TYPE = [
+  {
+    title: '파트별 세미나 (TBD)',
+    detail: '월마다 각자의 인사이트를 공유하는 자리입니다.',
+  },
+  {
+    title: 'Career Seminar',
+    detail: '파트별 현직자를 모셔서 커리어에 대해 공유하는 자리입니다.',
+  },
+];
+
+const STUDY_BODY = [
+  {title: '공부하고 싶은데 함께할 팀원이 없나요?',
+    detail: `커뮤니티원과 함께 자유 주제로 학습할 수 있는 자율 스터디에 참가해보세요!\n(UI/UX, Marketing, Web, AI,ML, etc!)`
+  }
+]
 
 export const SCROLL_CONTENT_LIST = [
   {
@@ -176,8 +143,8 @@ export const SCROLL_CONTENT_LIST = [
   },
   {
     type: 'Study',
-    title: 'Saint Study',
-    body: <StudyBody />,
+    title: <LogoTitle title='Saint Study' icon={studyIcon} iconSizeStyle='w-[46px] h-[91px]' titleCustomStyle='-bottom-6 left-2' />,
+    body: <TitleDetailBody data={STUDY_BODY} />,
     btnText: 'Saint Study',
     btnClickLink: '/',
   },
@@ -191,7 +158,7 @@ export const SCROLL_CONTENT_LIST = [
         titleCustomStyle='-bottom-8 left-8'
       />
     ),
-    body: <SeminarBody />,
+    body: <TitleDetailBody data={SEMINAR_TYPE} />,
     btnText: 'Career Seminar',
     btnClickLink: '/',
   },
