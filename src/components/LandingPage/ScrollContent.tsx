@@ -147,7 +147,7 @@ export const SCROLL_CONTENT_LIST = [
     title: <LogoTitle title='Saint Study' icon={studyIcon} iconSizeStyle='w-[46px] h-[91px]' titleCustomStyle='-bottom-6 left-2' />,
     body: <TitleDetailBody data={STUDY_BODY} />,
     btnText: 'Saint Study',
-    btnClickLink: '/',
+    btnClickLink: 'https://gdgoncampus-sg.oopy.io/saintstu',
   },
   {
     type: 'Seminar',
@@ -161,7 +161,7 @@ export const SCROLL_CONTENT_LIST = [
     ),
     body: <TitleDetailBody data={SEMINAR_TYPE} />,
     btnText: 'Career Seminar',
-    btnClickLink: '/',
+    btnClickLink: 'https://gdgoncampus-sg.oopy.io/seminar',
   },
   {
     type: 'Hackaton',
@@ -175,13 +175,13 @@ export const SCROLL_CONTENT_LIST = [
     ),
     body: <HackatonBody />,
     btnText: 'Hackaton',
-    btnClickLink: '/',
+    btnClickLink: 'https://gdgoncampus-sg.oopy.io/9244d2cd-ef8f-408c-b54a-a7faef2e6140',
   },
   {
     type: 'GFD',
     title: <GFDTitle />,
     body: <GFDBody />,
     btnText: 'Google For Developers',
-    btnClickLink: '/',
+    btnClickLink: 'https://developers.google.com/?hl=ko',
   },
 ];
