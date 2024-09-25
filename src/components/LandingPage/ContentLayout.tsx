@@ -97,6 +97,7 @@ const ContentLayout = (props: Props) => {
           className={`mx-5 w-fit rounded-[35px] bg-gdsc-Black px-[26px] py-[18px] text-gdsc-White 
             ${isVisible && 'animate-content-in'}
           `}
+          target="_blank"
           href={props.btnClickLink}
         >
           Learn more about <span className='font-bold'>{props.btnBoldText}</span>
