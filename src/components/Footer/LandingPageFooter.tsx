@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FooterIcon from '@/assets/icon/landing_gdg_footer.svg';
 import InstagramIcon from '@/assets/icon/Logo_Instagram.svg';
+import ButtonWithHrefLink from '../ButtonWithHrefLink';
 
 const LandingPageFooter = () => {
   return (
@@ -13,13 +14,11 @@ const LandingPageFooter = () => {
             <br />
             IT 제품과 서비스를 만들고자 하는 모든 서강대학교 학생들을 환영합니다.
           </span>
-          <Link
-            href='https://forms.gle/FBV1BLGTHjgKdH1y9'
-            target='_blank'
-            className='py-[18px] px-[26px] text-[20px] font-normal rounded-full bg-gdsc-Black flex text-gdsc-White w-fit'
+          <ButtonWithHrefLink
+          hrefLink="https://forms.gle/FBV1BLGTHjgKdH1y9"
           >
             Join Now
-          </Link>
+          </ButtonWithHrefLink>
         </span>
       </div>
       <div className='w-full border-t-[#767676] h-0.5 border-t' />
