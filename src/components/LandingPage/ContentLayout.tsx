@@ -94,12 +94,13 @@ const ContentLayout = (props: Props) => {
         )}
         <div className={`px-11 ${isVisible && 'animate-content-in-slow'}`}>{children}</div>
         <div className={`${isVisible && 'animate-content-in-more-slow'}`}>
-        <Link
-          className={`mx-5 w-fit rounded-[35px] bg-gdsc-Black px-[26px] py-[18px] text-gdsc-White`}
-          href={props.btnClickLink}
-        >
-          Learn more about <span className='font-bold'>{props.btnBoldText}</span>
-        </Link></div>
+          <Link
+            className={`mx-5 w-fit rounded-[35px] bg-gdsc-Black px-[26px] py-[18px] text-gdsc-White`}
+            href={props.btnClickLink}
+          >
+            Learn more about <span className='font-bold'>{props.btnBoldText}</span>
+          </Link>
+        </div>
       </section>
     </div>
   );
