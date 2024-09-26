@@ -110,7 +110,7 @@ const config: Config = {
         'content-in-more-slow': 'slide-right 1.7s ease-in-out',
         'content-out': 'slide-up 0.4s ease-in forwards',
         'gdsc-spin': 'spin-sequence 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite',
-        'gdsc-resize': 'resize 4s ease-in-out infinite',
+        'gdsc-resize': 'resize 3s ease-in-out infinite',
         'gdsc-rounded': 'rounded 4s ease-in-out infinite',
       },
     },

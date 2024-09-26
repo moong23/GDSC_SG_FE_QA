@@ -4,7 +4,7 @@ import hackatonIcon from '@/assets/icon/landing_hackaton.svg';
 import gfdIcon from '@/assets/icon/landing_gfd.svg';
 import gfdStarIcon from '@/assets/icon/landing_gfd_star.svg';
 import studyIcon from '@/assets/icon/landing_study.svg';
-import Link from 'next/link';
+import ButtonWithHrefLink from '../ButtonWithHrefLink';
 interface LogoTitleProps {
   icon: any;
   iconSizeStyle: string;
@@ -62,7 +62,7 @@ const TitleDetailBody = ({data}: TitleDetailBodyProps) => {
       {data.map(({ title, detail }) => (
         <div key={title} className='flex flex-col gap-1'>
           <h6 className='text-gdsc-Grey-800 text-H3_KR'>{title}</h6>
-          <p className='text-gdsc-Grey-600 text-P3_KR whitespace-pre-wrap'>{detail}</p>
+          <p className='whitespace-pre-wrap text-gdsc-Grey-600 text-P3_KR'>{detail}</p>
         </div>
       ))}
     </div>
@@ -117,29 +117,18 @@ export const SCROLL_CONTENT_LIST = [
       </span>
     ),
     body: (
-      <span className='text-P3_KR text-gdsc-Grey-600 whitespace-pre-wrap'>
+      <span className='whitespace-pre-wrap text-P3_KR text-gdsc-Grey-600'>
         GDG on Campus Sogang은 2024년 10월 정식으로 출범할 서강대학교 IT 커뮤니티입니다. {'\n'}서강대학교 재학생 중 IT에
         관심이 있는 학생들의 오아시스가 되기 위한 커뮤니티를 만들어나가고 있습니다.
       </span>
     ),
     isDoubleBtn: true,
     btn1: (
-      <Link
-        className='bg-gdsc-Black text-center rounded-full px-[26px] py-[18px] text-gdsc-White text-[20px]'
-        href='https://forms.gle/FBV1BLGTHjgKdH1y9'
-        target='_blank'
-      >
-        Join Now
-      </Link>
+      <ButtonWithHrefLink
+       hrefLink='https://forms.gle/FBV1BLGTHjgKdH1y9'>Join Now</ButtonWithHrefLink>
     ),
     btn2: (
-      <Link
-        className='bg-gdsc-Black text-center rounded-full px-[26px] py-[18px] text-gdsc-White text-[20px]'
-        href='https://gdgoncampus-sg.oopy.io/'
-        target='_blank'
-      >
-        Learn More
-      </Link>
+      <ButtonWithHrefLink hrefLink='https://gdgoncampus-sg.oopy.io/'>Learn More</ButtonWithHrefLink>
     ),
   },
   {
@@ -148,6 +137,7 @@ export const SCROLL_CONTENT_LIST = [
     body: <TitleDetailBody data={STUDY_BODY} />,
     btnText: 'Saint Study',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/saintstu',
+    hoverColor: 'hover:bg-gdsc-Blue-700'
   },
   {
     type: 'Seminar',
@@ -162,6 +152,7 @@ export const SCROLL_CONTENT_LIST = [
     body: <TitleDetailBody data={SEMINAR_TYPE} />,
     btnText: 'Seminar',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/seminar',
+    hoverColor: 'hover:bg-gdsc-Red-700'
   },
   {
     type: 'Hackaton',
@@ -176,6 +167,7 @@ export const SCROLL_CONTENT_LIST = [
     body: <HackatonBody />,
     btnText: 'Hackaton',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/9244d2cd-ef8f-408c-b54a-a7faef2e6140',
+    hoverColor: 'hover:bg-gdsc-Yellow-800'
   },
   {
     type: 'GFD',
@@ -183,5 +175,6 @@ export const SCROLL_CONTENT_LIST = [
     body: <GFDBody />,
     btnText: 'Google For Developers',
     btnClickLink: 'https://developers.google.com/?hl=ko',
+    hoverColor: 'hover:bg-gdsc-Green-600'
   },
 ];
