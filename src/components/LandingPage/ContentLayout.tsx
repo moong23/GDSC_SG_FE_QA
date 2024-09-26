@@ -72,7 +72,7 @@ const ContentLayout = (props: Props) => {
             </span>
             <div className={`${isVisible && 'animate-content-in-slow'}`}>{children}</div>
           </span>
-          <div className={`flex gap-5 ${isVisible && 'animate-content-in'}`}>
+          <div className={`flex gap-5 ${isVisible && 'animate-content-in-more-slow'}`}>
             {props.btn1}
             {props.btn2}
           </div>
@@ -93,15 +93,14 @@ const ContentLayout = (props: Props) => {
           <h2 className={`${isVisible && 'animate-content-in'} text-h2_EN text-gdsc-Black -mt-16`}>{subtitle}</h2>
         )}
         <div className={`px-11 ${isVisible && 'animate-content-in-slow'}`}>{children}</div>
-        <Link
-          className={`mx-5 w-fit rounded-[35px] bg-gdsc-Black px-[26px] py-[18px] text-gdsc-White 
-            ${isVisible && 'animate-content-in'}
-          `}
-          target="_blank"
-          href={props.btnClickLink}
-        >
-          Learn more about <span className='font-bold'>{props.btnBoldText}</span>
-        </Link>
+        <div className={`${isVisible && 'animate-content-in-more-slow'}`}>
+          <Link
+            className={`mx-5 w-fit rounded-[35px] bg-gdsc-Black px-[26px] py-[18px] text-gdsc-White`}
+            href={props.btnClickLink}
+          >
+            Learn more about <span className='font-bold'>{props.btnBoldText}</span>
+          </Link>
+        </div>
       </section>
     </div>
   );

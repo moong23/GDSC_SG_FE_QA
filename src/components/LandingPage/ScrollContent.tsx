@@ -80,10 +80,10 @@ const HackatonBody = () => {
 const GFDBody = () => {
   return (
     <p className='break-words break-keep text-24 text-gdsc-Grey-600'>
-      GDSC Sogang은 국내외 Google 생태계 내 개발 관련 단체와의 연합행사들을 기획 중에 있습니다.
+      GDG Sogang은 국내외 Google 생태계 내 개발 관련 단체와 연합행사들을 기획 중에 있습니다.
       <br />
       <br />
-      GDG, GDE, 국/내외 GDSC 콜라보를 진행합니다.
+      국/내외 GDG 콜라보를 진행합니다.
     </p>
   );
 };
@@ -117,8 +117,8 @@ export const SCROLL_CONTENT_LIST = [
       </span>
     ),
     body: (
-      <span className='text-P3_KR text-[#767676] whitespace-pre-wrap'>
-        GDG on Campus Sogang은 2024년 10월 정식으로 출범할 서강대학교의 GDSC 챕터입니다. {'\n'}서강대학교 재학생 중 IT에
+      <span className='text-P3_KR text-gdsc-Grey-600 whitespace-pre-wrap'>
+        GDG on Campus Sogang은 2024년 10월 정식으로 출범할 서강대학교 IT 커뮤니티입니다. {'\n'}서강대학교 재학생 중 IT에
         관심이 있는 학생들의 오아시스가 되기 위한 커뮤니티를 만들어나가고 있습니다.
       </span>
     ),
@@ -160,7 +160,7 @@ export const SCROLL_CONTENT_LIST = [
       />
     ),
     body: <TitleDetailBody data={SEMINAR_TYPE} />,
-    btnText: 'Career Seminar',
+    btnText: 'Seminar',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/seminar',
   },
   {
