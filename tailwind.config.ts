@@ -71,8 +71,8 @@ const config: Config = {
       },
       keyframes: {
         'slide-right': {
-          '0%': { transform: 'translateX(-50%) translateY(0)' },
-          '100%': { transform: 'translateX(0) translateY(0)' },
+          '0%': { transform: 'translateX(-50%) translateY(0)', opacity: '0' },
+          '100%': { transform: 'translateX(0) translateY(0)', opacity: '1' },
         },
         'slide-up': {
           '0%': { transform: 'translateX(0) translateY(0)', opacity: '1' },
@@ -107,6 +107,7 @@ const config: Config = {
       animation: {
         'content-in': 'slide-right 1s ease-in-out',
         'content-in-slow': 'slide-right 1.5s ease-in-out',
+        'content-in-more-slow': 'slide-right 1.7s ease-in-out',
         'content-out': 'slide-up 0.4s ease-in forwards',
         'gdsc-spin': 'spin-sequence 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite',
         'gdsc-resize': 'resize 4s ease-in-out infinite',
