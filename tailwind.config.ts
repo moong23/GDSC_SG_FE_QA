@@ -90,24 +90,18 @@ const config: Config = {
           '96%': { transform: 'rotate(0deg)' },
         },
         resize: {
-          '0%': { transform: 'translateY(0%)' },
-          '25%': { transform: 'translateY(20%)' },
-          '50%': { transform: 'translateY(20%)' },
-          '75%': { transform: 'translateY(0%)' },
+          '0%': { borderRadius: '0px 0px 0px 0px' },
+          '7.5%': { height: '70%', borderRadius: '0px 0px 100px 100px' },
+          '50%': { height: '70%', borderRadius: '0px 0px 100px 100px' },
+          '57.5%': { height: '100%', borderRadius: '0px 0px 0px 0px' },
+          '100%': { borderRadius: '0px 0px 0px 0px' },
         },
-        'svg-swap': {
-          '0%': { opacity: '1' }, // 첫 번째 SVG 보임
-          '45%': { opacity: '1' }, // 첫 번째 SVG 유지
-          '55%': { opacity: '0' }, // 첫 번째 SVG 사라짐
-          '90%': { opacity: '0' }, // 첫 번째 SVG 안보임
-          '100%': { opacity: '1' }, // 첫 번째 SVG 보임 유지
-        },
-        'svg-swap-reverse': {
-          '0%': { opacity: '0' }, // 두 번째 SVG 안보임
-          '45%': { opacity: '0' }, // 두 번째 SVG 안보임 유지
-          '55%': { opacity: '1' }, // 두 번째 SVG 보임
-          '90%': { opacity: '1' }, // 두 번째 SVG 보임 유지
-          '100%': { opacity: '0' }, // 두 번째 SVG 사라짐
+        rounded: {
+          '0%': { borderRadius: '9999px 9999px 9999px 9999px' },
+          '7.5%': { borderRadius: '9999px 0 9999px 0' },
+          '50%': { borderRadius: '9999px 0 9999px 0' },
+          '57.5%': { borderRadius: '9999px 9999px 9999px 9999px' },
+          '100%': { borderRadius: '9999px 9999px 9999px 9999px' },
         },
       },
       animation: {
@@ -115,9 +109,8 @@ const config: Config = {
         'content-in-slow': 'slide-right 1.5s ease-in-out',
         'content-out': 'slide-up 0.4s ease-in forwards',
         'gdsc-spin': 'spin-sequence 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite',
-        'gdsc-resize': 'resize 2s ease-in-out infinite',
-        'svg-swap': 'svg-swap 4s ease-in-out infinite', // 첫 번째 SVG 교체 애니메이션
-        'svg-swap-reverse': 'svg-swap-reverse 4s ease-in-out infinite', // 두 번째 SVG 교체 애니메이션
+        'gdsc-resize': 'resize 4s ease-in-out infinite',
+        'gdsc-rounded': 'rounded 4s ease-in-out infinite',
       },
     },
   },
