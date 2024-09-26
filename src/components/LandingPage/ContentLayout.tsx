@@ -2,11 +2,13 @@
 
 import Link from 'next/link';
 import { ReactNode, useEffect, useRef, useState } from 'react';
+import ButtonWithHrefLink from '../ButtonWithHrefLink';
 
 interface SingleButtonProps {
   isDoubleBtn?: false;
   btnBoldText: string;
   btnClickLink: string;
+  hoverColor: string;
 }
 
 interface DoubleButtonProps {
@@ -63,7 +65,7 @@ const ContentLayout = (props: Props) => {
         <div ref={targetRef}></div>
         <section
           ref={sectionRef}
-          className={`flex w-full flex-col gap-16 ${!isVisible && 'animate-content-out opacity-0'}`}
+          className={`flex w-full flex-col gap-16 pl-9 ${!isVisible && 'animate-content-out opacity-0'}`}
         >
           <span className='flex flex-col gap-3'>
             <span className='flex flex-col'>
@@ -94,12 +96,12 @@ const ContentLayout = (props: Props) => {
         )}
         <div className={`px-11 ${isVisible && 'animate-content-in-slow'}`}>{children}</div>
         <div className={`${isVisible && 'animate-content-in-more-slow'}`}>
-          <Link
-            className={`mx-5 w-fit rounded-[35px] bg-gdsc-Black px-[26px] py-[18px] text-gdsc-White`}
-            href={props.btnClickLink}
+          <ButtonWithHrefLink
+          className={props.hoverColor}
+          hrefLink={props.btnClickLink}
           >
             Learn more about <span className='font-bold'>{props.btnBoldText}</span>
-          </Link>
+          </ButtonWithHrefLink>
         </div>
       </section>
     </div>
