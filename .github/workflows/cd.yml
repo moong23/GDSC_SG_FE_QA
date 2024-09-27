@@ -56,7 +56,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.REPOSITORY }}
           tags: |
-            ${{ steps.prepare.version }}
+            ${{ steps.prepare.outputs.version }}
             latest
 
       - name: Build and push
@@ -77,7 +77,7 @@ jobs:
           echo '{
             "AWSEBDockerrunVersion": "1",
             "Image": {
-              "Name": "${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ steps.prepare.version }}",
+              "Name": "${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ steps.prepare.outputs.version }}",
               "Update": "true"
             },
             "OptionSettings": [
@@ -105,7 +105,7 @@ jobs:
           aws_session_token : ${{ steps.aws-creds.outputs.aws-session-token }}
           application_name: ${{ env.EB_APPLICATION_NAME }}
           environment_name: ${{ env.EB_ENVIRONMENT_NAME }}
-          version_label: ${{ steps.prepare.version }}-${{ github.run_attempt }}
+          version_label: ${{ steps.prepare.outputs.version }}-${{ github.run_attempt }}
           use_existing_version_if_available: true
           wait_for_deployment: false
           region: ${{ env.AWS_REGION }}
