@@ -65,14 +65,14 @@ const ContentLayout = (props: Props) => {
         <div ref={targetRef}></div>
         <section
           ref={sectionRef}
-          className={`flex w-full flex-col gap-16 pl-9 ${!isVisible && 'animate-content-out opacity-0'}`}
+          className={`flex w-full flex-col gap-16 mobile:gap-10 pl-9 mobile:pl-4 mobile:pr-8 ${!isVisible && 'animate-content-out opacity-0'}`}
         >
           <span className='flex flex-col gap-3'>
             <span className='flex flex-col'>
               <h3 className={`text-H1_EN ${isVisible && 'animate-content-in'}`}>{title}</h3>
               <h2 className={`${isVisible && 'animate-content-in'} text-h2_EN text-gdsc-Black -mt-6`}>{subtitle}</h2>
             </span>
-            <div className={`${isVisible && 'animate-content-in-slow'}`}>{children}</div>
+            <div className={`${isVisible && 'animate-content-in-slow'} mobile:text-P4_KR`}>{children}</div>
           </span>
           <div className={`flex gap-5 ${isVisible && 'animate-content-in-more-slow'}`}>
             {props.btn1}

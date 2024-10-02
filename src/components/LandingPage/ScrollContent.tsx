@@ -114,9 +114,9 @@ const STUDY_BODY = [
 export const SCROLL_CONTENT_LIST = [
   {
     type: 'Mainpage',
-    title: <span className='text-[120px] font-bold'>GDG</span>,
+    title: <span className='text-[120px] font-bold mobile:text-[60px]'>GDG</span>,
     subtitle: (
-      <span className='text-H2_EN'>
+      <span className='text-H2_EN mobile:text-H4_EN'>
         on Campus <span className='text-gdsc-Red-500'>Sogang</span>
       </span>
     ),
