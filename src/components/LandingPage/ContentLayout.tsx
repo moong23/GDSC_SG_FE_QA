@@ -88,19 +88,19 @@ const ContentLayout = (props: Props) => {
       <div ref={targetRef}></div>
       <section
         ref={sectionRef}
-        className={`flex w-full flex-col gap-10 ${!isVisible && 'animate-content-out opacity-0'}`}
+        className={`flex w-full flex-col gap-10 mobile:gap-7 mx-5 mobile:mx-4 ${!isVisible && 'animate-content-out opacity-0'}`}
       >
-        <h3 className={`text-H1_EN ${isVisible && 'animate-content-in'}`}>{title}</h3>
+        <h3 className={`text-H1_EN ${isVisible && 'animate-content-in'} mobile:text-H3_EN`}>{title}</h3>
         {subtitle && (
           <h2 className={`${isVisible && 'animate-content-in'} text-h2_EN text-gdsc-Black -mt-16`}>{subtitle}</h2>
         )}
-        <div className={`px-11 ${isVisible && 'animate-content-in-slow'}`}>{children}</div>
-        <div className={`${isVisible && 'animate-content-in-more-slow'}`}>
+        <div className={`px-11 mobile:px-4 ${isVisible && 'animate-content-in-slow'}`}>{children}</div>
+        <div className={`${isVisible && 'animate-content-in-more-slow'} pl-5 mobile:pl-2`}>
           <ButtonWithHrefLink
-          className={props.hoverColor}
+          className={`${props.hoverColor} mobile:w-[130px] mobile:h-11`}
           hrefLink={props.btnClickLink}
           >
-            Learn more about <span className='font-bold'>{props.btnBoldText}</span>
+            Learn more<span className='mobile:hidden'> about <span className='font-bold'>{props.btnBoldText}</span></span>
           </ButtonWithHrefLink>
         </div>
       </section>

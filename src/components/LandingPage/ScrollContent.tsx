@@ -32,19 +32,19 @@ const GFDTitle = () => {
   return (
     <>
       <div className='relative'>
-        <div className='relative h-[95px] w-[95px]'>
+        <div className='relative h-[95px] w-[95px] mobile:h-10 mobile:w-10'>
           <Image alt={`Google For Developers icon1`} className='w-full h-full' src={gfdIcon} />
         </div>
-        <div className='absolute -bottom-6 left-[34px] z-10'>
+        <div className='absolute -bottom-6 left-[34px] z-10 mobile:-bottom-[10px] mobile:left-[13px]'>
           <span className='text-gdsc-White'>G</span>
           oogle
           <br />
-          <div className='absolute -right-12 bottom-5 h-[41px] w-[41px] rotate-6'>
+          <div className='absolute -right-12 bottom-5 h-[41px] w-[41px] rotate-6 mobile:h-[22px] mobile:w-[22px] mobile:-right-7 mobile:bottom-3'>
             <Image alt={`Google For Developers icon2`} className='w-full h-full' src={gfdStarIcon} />
           </div>
         </div>
       </div>
-      <div className='whitespace-nowrap pl-[34px]'>For Developers</div>
+      <div className='whitespace-nowrap pl-[34px] mobile:pl-4'>For Developers</div>
     </>
   );
 };
@@ -61,8 +61,8 @@ const TitleDetailBody = ({data}: TitleDetailBodyProps) => {
     <div className='flex flex-col gap-8'>
       {data.map(({ title, detail }) => (
         <div key={title} className='flex flex-col gap-1'>
-          <h6 className='text-gdsc-Grey-800 text-H3_KR'>{title}</h6>
-          <p className='whitespace-pre-wrap text-gdsc-Grey-600 text-P3_KR'>{detail}</p>
+          <h6 className='text-gdsc-Grey-800 text-H3_KR mobile:text-H5_KR mobile:whitespace-pre-wrap'>{title}</h6>
+          <p className='whitespace-pre-wrap break-keep text-gdsc-Grey-600 text-P3_KR mobile:text-P4_KR mobile:max-w-[291px]'>{detail}</p>
         </div>
       ))}
     </div>
@@ -71,7 +71,7 @@ const TitleDetailBody = ({data}: TitleDetailBodyProps) => {
 
 const HackatonBody = () => {
   return (
-    <p className='font-ko text-24 text-gdsc-Grey-600'>
+    <p className='font-ko text-24 text-gdsc-Grey-600 mobile:text-14'>
       난이도별 해커톤 및<br />타 GDG Campus와의 연합 해커톤을 진행합니다.
     </p>
   );
@@ -79,7 +79,7 @@ const HackatonBody = () => {
 
 const GFDBody = () => {
   return (
-    <p className='break-words break-keep text-24 text-gdsc-Grey-600'>
+    <p className='break-words break-keep text-24 text-gdsc-Grey-600 mobile:text-14'>
       GDG Sogang은 국내외 Google 생태계 내
       <br />
       개발 관련 단체와 연합행사들을 기획 중에 있습니다.
@@ -106,7 +106,7 @@ const SEMINAR_TYPE = [
 
 const STUDY_BODY = [
   {
-    title: '공부하고 싶은데 함께할 팀원이 없나요?',
+    title: '공부하고 싶은데 \n함께할 팀원이 없나요?',
     detail: `커뮤니티원과 함께 자유 주제로 학습할 수 있는 자율 스터디에 참가해보세요!\n(UI/UX, Marketing, Web, AI,ML, etc!)`
   }
 ]
@@ -137,7 +137,7 @@ export const SCROLL_CONTENT_LIST = [
   },
   {
     type: 'Study',
-    title: <LogoTitle title='Saint Study' icon={studyIcon} iconSizeStyle='w-[46px] h-[91px]' titleCustomStyle='-bottom-6 left-2' />,
+    title: <LogoTitle title='Saint Study' icon={studyIcon} iconSizeStyle='w-[46px] h-[91px] mobile:w-[22px] mobile:h-11' titleCustomStyle='-bottom-6 left-2 mobile:-bottom-2 mobile:left-1' />,
     body: <TitleDetailBody data={STUDY_BODY} />,
     btnText: 'Saint Study',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/saintstu',
@@ -149,8 +149,8 @@ export const SCROLL_CONTENT_LIST = [
       <LogoTitle
         title='Seminar'
         icon={seminarIcon}
-        iconSizeStyle='w-[68px] h-[82px]'
-        titleCustomStyle='-bottom-8 left-8'
+        iconSizeStyle='w-[68px] h-[82px] mobile:w-[30px] mobile:h-9'
+        titleCustomStyle='-bottom-8 left-8 mobile:-bottom-[14px] mobile:left-[13px]'
       />
     ),
     body: <TitleDetailBody data={SEMINAR_TYPE} />,
@@ -164,8 +164,8 @@ export const SCROLL_CONTENT_LIST = [
       <LogoTitle
         title='Hackaton'
         icon={hackatonIcon}
-        iconSizeStyle='w-[105px] h-[105px]'
-        titleCustomStyle='-bottom-5 left-11'
+        iconSizeStyle='w-[105px] h-[105px] mobile:w-[48px] mobile:h-[48px]'
+        titleCustomStyle='-bottom-5 left-11 mobile:-bottom-[10px] mobile:left-[18px]'
       />
     ),
     body: <HackatonBody />,
