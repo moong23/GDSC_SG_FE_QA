@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { Noto_Sans_KR } from 'next/font/google';
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body className={notoSansKr.className}>{children}</body>
+      {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
     </html>
   );
 }
