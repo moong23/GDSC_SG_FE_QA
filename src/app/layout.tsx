@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: 'GDG on Campus : Sogang Univ',
     images: [
       {
-        url: 'og-image.jpg',
+        url: 'og-image.png',
         width: 1200,
         height: 630,
         alt: 'GDG on Campus : Sogang Univ',
