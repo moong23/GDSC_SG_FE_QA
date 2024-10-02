@@ -10,8 +10,24 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: 'GDSC Sogang',
-  description: 'GDSC Sogang Homepage',
+  title: 'GDG on Campus Sogang',
+  description: 'Google Developer Groups on Sogang University',
+  icons: {
+    icon: 'favicon.ico',
+  },
+  openGraph: {
+    url: 'https://gdg-campus-sg.com/',
+    type: 'website',
+    siteName: 'GDG on Campus : Sogang Univ',
+    images: [
+      {
+        url: 'og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'GDG on Campus : Sogang Univ',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
