@@ -80,10 +80,14 @@ const HackatonBody = () => {
 const GFDBody = () => {
   return (
     <p className='break-words break-keep text-24 text-gdsc-Grey-600'>
-      GDG Sogang은 국내외 Google 생태계 내 개발 관련 단체와 연합행사들을 기획 중에 있습니다.
+      GDG Sogang은 국내외 Google 생태계 내
       <br />
+      개발 관련 단체와 연합행사들을 기획 중에 있습니다.
       <br />
-      국/내외 GDG 콜라보를 진행합니다.
+      <br/>
+      GDG, GDE, 국/내외 GDG on campus와
+      <br />
+      콜라보를 진행합니다.
     </p>
   );
 };
