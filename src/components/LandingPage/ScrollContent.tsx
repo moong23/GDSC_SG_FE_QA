@@ -141,7 +141,7 @@ export const SCROLL_CONTENT_LIST = [
     body: <TitleDetailBody data={STUDY_BODY} />,
     btnText: 'Saint Study',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/saintstu',
-    hoverColor: 'hover:bg-gdsc-Blue-700'
+    hoverColor: 'hover:bg-[#3F74E0]'
   },
   {
     type: 'Seminar',
@@ -156,7 +156,7 @@ export const SCROLL_CONTENT_LIST = [
     body: <TitleDetailBody data={SEMINAR_TYPE} />,
     btnText: 'Seminar',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/seminar',
-    hoverColor: 'hover:bg-gdsc-Red-700'
+    hoverColor: 'hover:bg-[#C9312E]'
   },
   {
     type: 'Hackaton',
@@ -171,7 +171,7 @@ export const SCROLL_CONTENT_LIST = [
     body: <HackatonBody />,
     btnText: 'Hackaton',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/9244d2cd-ef8f-408c-b54a-a7faef2e6140',
-    hoverColor: 'hover:bg-gdsc-Yellow-800'
+    hoverColor: 'hover:bg-[#F0AB00]'
   },
   {
     type: 'GFD',
@@ -179,6 +179,6 @@ export const SCROLL_CONTENT_LIST = [
     body: <GFDBody />,
     btnText: 'Google For Developers',
     btnClickLink: 'https://developers.google.com/?hl=ko',
-    hoverColor: 'hover:bg-gdsc-Green-600'
+    hoverColor: 'hover:bg-[#34A853]'
   },
 ];
