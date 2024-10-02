@@ -1,19 +1,34 @@
-import tw from "tailwind-styled-components";
+import LandingPageFooter from '@/components/Footer/LandingPageFooter';
+import BackgroundContent from '@/components/LandingPage/BackgroundContent';
+import ContentLayout from '@/components/LandingPage/ContentLayout';
+import PageWrapper from '@/components/LandingPage/PageWrapper';
+import { SCROLL_CONTENT_LIST } from '@/components/LandingPage/ScrollContent';
 
 export default function Home() {
-  const MainWrapper = tw.main`
-    flex
-    min-h-screen
-    flex-col
-    items-center
-    justify-center
-    gap-8
-    p-24
-  `;
   return (
-    <MainWrapper>
-      <h1 className="text-4xl font-bold">GDSC Sogang</h1>
-      <p className="text-lg text-gray-600">2024.09.02 ~</p>
-    </MainWrapper>
+    <main className='flex flex-col h-screen overflow-y-auto'>
+      {SCROLL_CONTENT_LIST.map(({ type, title, subtitle, isDoubleBtn, btn1, btn2, btnClickLink, body, btnText, hoverColor }) => (
+        <PageWrapper key={type} className='relative flex justify-center items-ceneter'>
+          {isDoubleBtn ? (
+            <ContentLayout title={title} subtitle={subtitle} isDoubleBtn btn1={btn1} btn2={btn2}>
+              {body}
+            </ContentLayout>
+          ) : (
+            <ContentLayout
+              title={title}
+              subtitle={subtitle}
+              isDoubleBtn={false}
+              btnBoldText={btnText!}
+              btnClickLink={btnClickLink!}
+              hoverColor={hoverColor!}
+            >
+              {body}
+            </ContentLayout>
+          )}
+        </PageWrapper>
+      ))}
+      <BackgroundContent />
+      <LandingPageFooter />
+    </main>
   );
 }

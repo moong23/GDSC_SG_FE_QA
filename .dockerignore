@@ -1,0 +1,5 @@
+.DS_Store
+.next
+.yarn/cache/typescript-*
+.yarn/cache/ts-node*
+.yarn/cache/eslint*
