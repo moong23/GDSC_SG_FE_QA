@@ -27,7 +27,7 @@ export default function Home() {
           )}
         </PageWrapper>
       ))}
-      {/* <BackgroundContent /> */}
+      <BackgroundContent />
       <LandingPageFooter />
     </main>
   );

@@ -9,7 +9,7 @@ const LandingPageFooter = () => {
     <div className='w-full justify-center h-[569px] bg-[#f9f9f9] flex flex-col items-center shrink-0'>
       <div className='flex flex-col items-start justify-end h-full mb-20 w-content'>
         <span className='flex flex-col gap-12'>
-          <span className='text-H4_KR text-gdsc-Black'>
+          <span className='text-H4_KR text-gdsc-Black mobile:text-H_KR mobile:text-14'>
             GDSC Sogang은 개발자부터 기획자, 디자이너까지
             <br />
             IT 제품과 서비스를 만들고자 하는 모든 서강대학교 학생들을 환영합니다.
