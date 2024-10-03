@@ -16,7 +16,6 @@ env:
   REPOSITORY: "next-production-image"
   EB_ENVIRONMENT_NAME: "GDG-NextJs-Environment"
   EB_APPLICATION_NAME: "GDG-WebApp"
-  NEXT_ENV_FILE: ${{ secrets.NEXT_ENV_FILE }}
 
 jobs:
   deploy:
@@ -94,12 +93,8 @@ jobs:
             ]
           }' > Dockerrun.aws.json
 
-      - name: Generate .env file
-        run: |
-          echo "${{ env.NEXT_ENV_FILE }}" | base64 -d > .env
-
       - name: Generate deploy file
-        run: zip deploy.zip Dockerrun.aws.json .env
+        run: zip deploy.zip Dockerrun.aws.json
 
       - name: Beanstalk Deploy
         uses: einaregilsson/beanstalk-deploy@v20
