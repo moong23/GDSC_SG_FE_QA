@@ -53,16 +53,18 @@ interface TitleDetailBodyProps {
   data: {
     title: string;
     detail: string;
-  }[]
+  }[];
 }
 
-const TitleDetailBody = ({data}: TitleDetailBodyProps) => {
+const TitleDetailBody = ({ data }: TitleDetailBodyProps) => {
   return (
     <div className='flex flex-col gap-8'>
       {data.map(({ title, detail }) => (
         <div key={title} className='flex flex-col gap-1'>
           <h6 className='text-gdsc-Grey-800 text-H3_KR mobile:text-H5_KR mobile:whitespace-pre-wrap'>{title}</h6>
-          <p className='whitespace-pre-wrap break-keep text-gdsc-Grey-600 text-P3_KR mobile:text-P4_KR mobile:max-w-[291px]'>{detail}</p>
+          <p className='whitespace-pre-wrap break-keep text-gdsc-Grey-600 text-P3_KR mobile:text-P4_KR mobile:max-w-[291px]'>
+            {detail}
+          </p>
         </div>
       ))}
     </div>
@@ -84,7 +86,7 @@ const GFDBody = () => {
       <br />
       개발 관련 단체와 연합행사들을 기획 중에 있습니다.
       <br />
-      <br/>
+      <br />
       GDG, GDE, 국/내외 GDG on campus와
       <br />
       콜라보를 진행합니다.
@@ -107,9 +109,9 @@ const SEMINAR_TYPE = [
 const STUDY_BODY = [
   {
     title: '공부하고 싶은데 \n함께할 팀원이 없나요?',
-    detail: `커뮤니티원과 함께 자유 주제로 학습할 수 있는 자율 스터디에 참가해보세요!\n(UI/UX, Marketing, Web, AI,ML, etc!)`
-  }
-]
+    detail: `커뮤니티원과 함께 자유 주제로 학습할 수 있는 자율 스터디에 참가해보세요!\n(UI/UX, Marketing, Web, AI,ML, etc!)`,
+  },
+];
 
 export const SCROLL_CONTENT_LIST = [
   {
@@ -121,27 +123,37 @@ export const SCROLL_CONTENT_LIST = [
       </span>
     ),
     body: (
-      <span className='whitespace-pre-wrap text-P3_KR text-gdsc-Grey-600'>
-        GDG on Campus Sogang은 2024년 10월 정식으로 출범할 서강대학교 IT 커뮤니티입니다. {'\n'}서강대학교 재학생 중 IT에
-        관심이 있는 학생들의 오아시스가 되기 위한 커뮤니티를 만들어나가고 있습니다.
-      </span>
+      <>
+        <span className='whitespace-pre-wrap text-P3_KR text-gdsc-Grey-600 mobile:hidden'>
+          GDG on Campus Sogang은 2024년 10월 정식으로 출범할 서강대학교 IT 커뮤니티입니다. {'\n'}서강대학교 재학생 중
+          IT에 관심이 있는 학생들의 오아시스가 되기 위한 커뮤니티를 만들어나가고 있습니다.
+        </span>
+        <span className='hidden mobile:block whitespace-pre-wrap text-P4_KR text-gdsc-Grey-600'>
+          GDG on Campus Sogang은 2024년 10월
+          <br /> 정식으로 출범할 서강대학교 IT 커뮤니티입니다.
+          <br /> 서강대학교 재학생 중 IT에 관심이 있는 학생들의
+          <br /> 오아시스가 되기 위한 커뮤니티를 만들어나가고 있습니다.
+        </span>
+      </>
     ),
     isDoubleBtn: true,
-    btn1: (
-      <ButtonWithHrefLink
-       hrefLink='https://forms.gle/FBV1BLGTHjgKdH1y9'>Join Now</ButtonWithHrefLink>
-    ),
-    btn2: (
-      <ButtonWithHrefLink hrefLink='https://gdgoncampus-sg.oopy.io/'>Learn More</ButtonWithHrefLink>
-    ),
+    btn1: <ButtonWithHrefLink hrefLink='https://forms.gle/FBV1BLGTHjgKdH1y9'>Join Now</ButtonWithHrefLink>,
+    btn2: <ButtonWithHrefLink hrefLink='https://gdgoncampus-sg.oopy.io/'>Learn More</ButtonWithHrefLink>,
   },
   {
     type: 'Study',
-    title: <LogoTitle title='Saint Study' icon={studyIcon} iconSizeStyle='w-[46px] h-[91px] mobile:w-[22px] mobile:h-11' titleCustomStyle='-bottom-6 left-2 mobile:-bottom-2 mobile:left-1' />,
+    title: (
+      <LogoTitle
+        title='Saint Study'
+        icon={studyIcon}
+        iconSizeStyle='w-[46px] h-[91px] mobile:w-[22px] mobile:h-11'
+        titleCustomStyle='-bottom-6 left-2 mobile:-bottom-2 mobile:left-1'
+      />
+    ),
     body: <TitleDetailBody data={STUDY_BODY} />,
     btnText: 'Saint Study',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/saintstu',
-    hoverColor: 'hover:bg-[#3F74E0]'
+    hoverColor: 'hover:bg-[#3F74E0]',
   },
   {
     type: 'Seminar',
@@ -156,7 +168,7 @@ export const SCROLL_CONTENT_LIST = [
     body: <TitleDetailBody data={SEMINAR_TYPE} />,
     btnText: 'Seminar',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/seminar',
-    hoverColor: 'hover:bg-[#C9312E]'
+    hoverColor: 'hover:bg-[#EA4435]',
   },
   {
     type: 'Hackaton',
@@ -171,7 +183,7 @@ export const SCROLL_CONTENT_LIST = [
     body: <HackatonBody />,
     btnText: 'Hackaton',
     btnClickLink: 'https://gdgoncampus-sg.oopy.io/9244d2cd-ef8f-408c-b54a-a7faef2e6140',
-    hoverColor: 'hover:bg-[#F0AB00]'
+    hoverColor: 'hover:bg-[#F9AB00]',
   },
   {
     type: 'GFD',
@@ -179,6 +191,6 @@ export const SCROLL_CONTENT_LIST = [
     body: <GFDBody />,
     btnText: 'Google For Developers',
     btnClickLink: 'https://developers.google.com/?hl=ko',
-    hoverColor: 'hover:bg-[#34A853]'
+    hoverColor: 'hover:bg-[#34A853]',
   },
 ];
