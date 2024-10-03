@@ -6,7 +6,7 @@ import AnimatedStar from '@/assets/icon/landing_star.svg';
 const BackgroundContent = () => {
   return (
     <div className='fixed flex justify-center w-screen h-screen pointer-events-none -z-10'>
-      <span className='relative flex justify-center h-full w-content'>
+      <span className='relative flex justify-center h-full w-content mobile:w-full'>
         <span className='absolute -bottom-14 right-[26rem] w-[38vh] aspect-square animate-gdsc-spin mobile:hidden'>
           <Image src={AnimatedStar} fill alt='animated star' />
         </span>

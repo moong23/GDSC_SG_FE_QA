@@ -61,7 +61,7 @@ const ContentLayout = (props: Props) => {
   }, []);
   if (props.isDoubleBtn) {
     return (
-      <div className='w-content'>
+      <div className='w-content mobile:w-full'>
         <div ref={targetRef}></div>
         <section
           ref={sectionRef}
@@ -84,7 +84,7 @@ const ContentLayout = (props: Props) => {
   }
 
   return (
-    <div className='w-content'>
+    <div className='w-content mobile:w-full'>
       <div ref={targetRef}></div>
       <section
         ref={sectionRef}
