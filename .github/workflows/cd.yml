@@ -96,7 +96,7 @@ jobs:
 
       - name: Generate .env file
         run: |
-          echo "${{ env.NEXT_ENV_FILE }}" | base64 -d > .env
+          echo "${{ env.NEXT_ENV_FILE }}" | base64 -d > output_file
 
       - name: Generate deploy file
         run: zip deploy.zip Dockerrun.aws.json .env
